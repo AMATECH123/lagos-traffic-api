@@ -39,20 +39,32 @@ confirm it sits inside the current date cutoff.
 
 ## Prompt
 
-> Panel A of the attached image shows an electrophoretic mobility shift assay in which three
-> synthetic RNAs were each titrated with recombinant ELAV protein. The gel carries eighteen numbered
-> lanes in three groups of six, one group per RNA, in the order RNA 1, RNA 2, RNA 3 from left to
-> right. Within each group the first lane received no protein, as the minus sign above it indicates,
-> and the remaining five lanes received recombinant ELAV at increasing concentration, as the wedge
-> above them indicates. Panel B plots the percentage of bound RNA against protein concentration for
-> the same three RNAs. Each plotted point in a series corresponds to one of the five protein
-> containing lanes of that RNA, taken in the same left to right order, so the lane that received no
-> protein is not plotted. Treat the quantification in panel B as the measurement of record, and treat
-> an RNA as more than half bound when its bound percentage is above fifty. Give the number of the
-> lane in panel A that received the lowest recombinant ELAV concentration at which RNA 2 is more than
-> half bound.
+> The attached image shows an electrophoretic mobility shift assay in which three synthetic RNAs were
+> each titrated with recombinant ELAV protein, together with the quantification of that experiment.
+>
+> In panel A the gel carries eighteen numbered lanes arranged as three consecutive groups of six, one
+> group per RNA, in the order RNA 1, RNA 2, RNA 3 from left to right. Within each group the minus
+> sign marks the lane that received no protein, and the wedge marks the lanes that received
+> recombinant ELAV, increasing from left to right.
+>
+> In panel B, bound RNA is plotted against protein concentration, with one point per protein
+> concentration tested for each RNA. All three RNAs were tested at the same concentrations, and the
+> points of each series run in the same left to right order as the corresponding lanes of that RNA in
+> panel A.
+>
+> Treat the plotted points in panel B as the measurement of record, and treat an RNA as more than
+> half bound when its bound RNA value is greater than $50\%$.
+>
+> Give the number of the lane in panel A that received the lowest concentration of recombinant ELAV
+> at which RNA 2 is more than half bound.
 
 Answer format: integer.
+
+The prompt deliberately stops short of saying that the lane without protein contributes no point to
+panel B. That inference is the task. It is forced rather than open, because each group holds six
+lanes while each series holds five points, only one lane per group received no protein, and a binding
+curve cannot carry a point for a concentration that was never tested. A biochemist resolves it in
+seconds. A model that does not make the inference lands one lane low.
 
 ---
 
@@ -75,10 +87,12 @@ the minus seven and ten to the minus six. The legend gives RNA 1 as an open whit
 line, RNA 2 as a filled cyan square on a solid black line, and RNA 3 as a filled grey square on a
 dashed black line.
 
-**Step 4.** Count the plotted points per series. Each of the three series carries five points. Five
-plotted points matches the five protein containing lanes per group found in step 2, and the lane that
-received no protein contributes no point. The first plotted point of a series therefore belongs to
-the second lane of its group, not the first.
+**Step 4.** Count the plotted points per series and deduce the correspondence. Each of the three
+series carries five points, while each gel group holds six lanes. One lane per group must therefore
+be unplotted. The only lane in each group that received no protein is the one marked by the minus
+sign, and a binding curve plots bound RNA against protein concentration, so no point can exist for a
+lane in which no protein was present. The unplotted lane is the minus lane, and the first plotted
+point of a series belongs to the second lane of its group, not the first.
 
 **Step 5.** Fix the correspondence for RNA 2. The RNA 2 group runs from lane seven to lane twelve.
 Lane seven received no protein. The five plotted RNA 2 points therefore map in order onto lanes
