@@ -12,8 +12,8 @@ Image file in this folder: `Image_1_EMSA_rELAV.jpg`
 | Property | Value |
 |---|---|
 | Format | JPEG |
-| Dimensions | 3102 by 1608 pixels |
-| File size | 195 KB |
+| Dimensions | 2000 by 1037 pixels |
+| File size | 336 KB |
 | Source | External, open access |
 | Article | Electrophoretic Mobility Shift Assay (EMSA) for Assessing RNA and Protein Binding and Complex Formation Using Recombinant RNA Binding Proteins and In Vitro Transcribed RNA |
 | Citation | Bio Protoc. 2026 Jun 20;16(12):e5583 |
@@ -29,11 +29,16 @@ resolution from the article PDF. Nothing was added, removed, sharpened, cropped 
 The red dashed guides, the wedge triangles, the lane numbers and the band labels are all the
 publisher's own, present in the published figure.
 
-Two notes to check against the platform before you submit. The project guidance asks for roughly
-2000 pixels on the long edge, and this file is 3102. I kept the publisher resolution because the
-stronger rule is to use the original and because panel B needs that detail to be read by a human
-reviewer. Downscale only if the platform rejects it. Second, the article is dated June 2026, so
-confirm it sits inside the current date cutoff.
+The figure was resampled once, from the publisher resolution of 3102 by 1608 down to 2000 by 1037,
+to meet the guidance of roughly 2000 pixels on the long edge. That is a single Lanczos resize with no
+other processing. Nothing was sharpened, cropped or colour corrected, and the aspect ratio is
+unchanged. The publisher resolution file is kept beside it as
+`Image_1_EMSA_rELAV_original_3102px.jpg` in case a reviewer asks for it. At 2000 pixels the lane
+numerals, the axis ticks, the legend and all five symbols with their error bars in panel B remain
+legible, so a human reviewer can still reach the answer.
+
+One item to check against the platform before you submit: the article is dated June 2026, so confirm
+it sits inside the current date cutoff.
 
 ---
 
@@ -248,7 +253,7 @@ or retire it.
 |---|---|
 | Format PNG or JPEG | JPEG |
 | Under 5 MB | 195 KB |
-| Original resolution, nothing enhanced or cropped | Publisher embedded image, untouched |
+| Resolution | Resampled once to 2000 px long edge, nothing else changed |
 | On image labels preserved | Lane numbers, group labels, wedges, band labels, axes, legend, all intact |
 | No annotation added after capture | None added, every mark is the publisher's |
 | Not BioRender | Autoradiograph plus data plot |
