@@ -133,6 +133,39 @@ Named in the guide and in the image standards. Real captures carry bubbles, scra
 background speckle, torn tissue and uneven loading. Golden example 1 depended on calling two red
 specks background rather than signal.
 
+### W10. Published figures leak their own numbers into the running text
+
+The second lesson from a failed search, and it bites hardest in gel electrophoresis.
+
+A gel was found that looked ideal: a ladder with printed sizes on the left, four sample lanes whose
+band positions are printed nowhere on the image, and real degradation across the series. The obvious
+question was to interpolate a band size against the ladder, which is pure measurement and exactly
+what W9 calls for.
+
+The article text then gave every one of those sizes, lane by lane, to the base pair. Authors report
+what their figures show. That is good science and it makes the figure useless here, because the rule
+is that the answer must not be findable in the publication.
+
+The two constraints therefore pull against each other on any published figure. W9 says the answer
+must be measured off the pixels. The sourcing rule says the answer must not appear in the article.
+A measurable quantity that the authors never reported is a narrow target, since the measurable
+quantities are usually the point of the paper.
+
+Three ways through, in order of how well they work.
+
+1. Use your own gel. No licence to verify, no article text to leak the answer, and the guide already
+   prefers it. Failed and subpar assays are encouraged, and they carry exactly the artifacts and
+   ambiguity that break models. This is the clean solution and it removes both constraints at once.
+2. Ask for a relation the authors never computed, not a value they reported. A ratio between two
+   measured features, a rank order across lanes, or a comparison that the paper states only
+   qualitatively. Check the full text first, not just the caption, because the numbers usually sit in
+   the results paragraphs rather than under the figure.
+3. Pick a figure whose key feature the paper treats only in words. A paper that says a smear was
+   observed, without quantifying it, leaves the measurement open.
+
+Whichever route, read the whole article text before authoring. The caption is not enough. Both
+failures in this project would have been caught by a single search of the running text.
+
 ### W9. The one that is not a model weakness at all
 
 This is a lesson from two failed attempts, not from the golden examples, and it governs everything
