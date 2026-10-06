@@ -15,7 +15,7 @@ Image file in this folder: `Image_1_EMSA_rELAV.jpg`
 | Dimensions | 2000 by 1037 pixels |
 | File size | 336 KB |
 | Source | External, open access |
-| Article | Electrophoretic Mobility Shift Assay (EMSA) for Assessing RNA and Protein Binding and Complex Formation Using Recombinant RNA Binding Proteins and In Vitro Transcribed RNA |
+| Article | Electrophoretic Mobility Shift Assay (EMSA) for Assessing RNA–Protein Binding and Complex Formation Using Recombinant RNA-Binding Proteins and In Vitro–Transcribed RNA (title reproduced verbatim, so it keeps the publisher's dashes) |
 | Citation | Bio Protoc. 2026 Jun 20;16(12):e5583 |
 | DOI | 10.21769/BioProtoc.5583 |
 | PMCID | PMC13293991 |
@@ -267,7 +267,7 @@ or retire it.
 | Implied answer space of at least ten | A continuous percentage, not a short list of candidates |
 | One analysis, not stacked | One concentration assignment feeding one calculation |
 | Not a pure counting question | No counting is requested at all |
-| Conventions spelled out | Dilution series, control lane, wedge direction, binding model, decimal places |
+| Conventions spelled out | Dilution series, control lane, wedge direction, binding model, significant figures |
 | Solution numbered, evidence first, arithmetic shown | Yes |
 | Image description derives the answer without the image | Yes, the series table and lane layout are given |
 | Description never states the answer | The predicted value is never given |
@@ -282,6 +282,8 @@ or retire it.
 The red dashed guides are the publisher's analysis overlay rather than raw capture. They are part of
 the published figure, so they are not an annotation added after capture by me, and the golden
 examples include comparable publisher marks such as the wedge triangle over a titration. If a
-reviewer reads them as interpretation guides, the clean fix is to keep the prompt as written, since
-it already instructs the responder to treat the plotted points as the measurement of record and the
-guides then work against the model rather than for it.
+reviewer reads them as interpretation guides, note that they cannot help here. They mark the fitted
+constants at the fifty per cent level, while the question asks for a value computed from the isotherm
+at a concentration they do not mark. The guides pull a careless reader towards the plotted
+measurement of about 36, which is one of the distractors, so they work against the model rather than
+for it.
