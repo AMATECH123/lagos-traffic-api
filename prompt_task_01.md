@@ -2,4 +2,4 @@ In the experiment shown, a radiolabelled RNA probe was held at 100 pM, roughly o
 
 Panel A shows the resulting gel. The eighteen numbered lanes form three consecutive groups, one group per RNA, in the order RNA 1, RNA 2, RNA 3 from left to right. Within each group the minus sign marks the control lane, and the wedge marks the lanes that received protein, rising from left to right. Panel B reports the quantification for the same three RNAs together with the fitted dissociation constant of each.
 
-Treating the interaction as a single site equilibrium, and taking the free protein concentration to be well approximated by the total protein concentration under these conditions, calculate the percentage of RNA 2 predicted to be bound in lane 10. Give the answer to one decimal place.
+Treating the interaction as a single site equilibrium, and taking the free protein concentration to be well approximated by the total protein concentration under these conditions, calculate the percentage of RNA 2 predicted to be bound in lane 10. Report the percentage to two significant figures.
