@@ -44,93 +44,89 @@ it sits inside the current date cutoff.
 
 ## Prompt
 
-> The attached image shows an electrophoretic mobility shift assay in which three synthetic RNAs were
-> each titrated with recombinant ELAV protein, together with the quantification of that experiment.
+> In the experiment shown, a radiolabelled RNA probe was held at 100 pM, roughly one hundred fold
+> below the dissociation constants measured here, and recombinant ELAV was added from a serial
+> dilution prepared at 1 µM, 250 nM, 62.5 nM, 15.6 nM and 3.9 nM, alongside a buffer only control
+> containing no protein.
 >
-> In panel A the gel carries eighteen numbered lanes arranged as three consecutive groups of six, one
+> Panel A shows the resulting gel. The eighteen numbered lanes form three consecutive groups, one
 > group per RNA, in the order RNA 1, RNA 2, RNA 3 from left to right. Within each group the minus
-> sign marks the lane that received no protein, and the wedge marks the lanes that received
-> recombinant ELAV, increasing from left to right.
+> sign marks the control lane, and the wedge marks the lanes that received protein, rising from left
+> to right. Panel B reports the quantification for the same three RNAs together with the fitted
+> dissociation constant of each.
 >
-> In panel B, bound RNA is plotted against protein concentration, with one point per protein
-> concentration tested for each RNA. All three RNAs were tested at the same concentrations, and the
-> points of each series run in the same left to right order as the corresponding lanes of that RNA in
-> panel A.
->
-> Treat the plotted points in panel B as the measurement of record, and treat an RNA as more than
-> half bound when its bound RNA value is greater than $50\%$.
->
-> Give the number of the lane in panel A that received the lowest concentration of recombinant ELAV
-> at which RNA 2 is more than half bound.
+> Treating the interaction as a single site equilibrium, and taking the free protein concentration to
+> be well approximated by the total protein concentration under these conditions, calculate the
+> percentage of RNA 2 predicted to be bound in lane 10. Give the answer to one decimal place.
 
-Answer format: integer.
+Answer format: decimal, one decimal place.
 
-The prompt deliberately stops short of saying that the lane without protein contributes no point to
-panel B. That inference is the task. It is forced rather than open, because each group holds six
-lanes while each series holds five points, only one lane per group received no protein, and a binding
-curve cannot carry a point for a concentration that was never tested. A biochemist resolves it in
-seconds. A model that does not make the inference lands one lane low.
+The dilution series and the probe concentration are method facts taken from the source protocol, so
+they belong in the prompt. What the image alone supplies, and what the prompt withholds, is the
+dissociation constant of RNA 2 and the position of lane 10 within its group. Neither can be had
+without looking.
 
 ---
 
 ## Step by step solution
 
-**Step 1.** Record the lane layout in panel A. The numerals printed below the gel run from one to
-eighteen without a gap. The group labels above the gel read RNA 1, RNA 2 and RNA 3, and three wedge
-triangles sit below those labels, one per group. Each group therefore holds six lanes: lanes one to
-six are RNA 1, lanes seven to twelve are RNA 2, and lanes thirteen to eighteen are RNA 3.
+**Step 1.** Locate the RNA 2 group in panel A. The numerals below the gel run from one to eighteen
+and the three group labels above it read RNA 1, RNA 2 and RNA 3, each centred over six lanes. The
+RNA 2 group is therefore lanes seven to twelve.
 
-**Step 2.** Record which lane in each group carries no protein. A short minus sign sits above the
-first lane of each group, that is above lanes one, seven and thirteen. The wedge in each group begins
-at the second lane of the group and widens to the right, so lanes two to six, eight to twelve and
-fourteen to eighteen carry recombinant ELAV at five increasing concentrations.
+**Step 2.** Identify the control lane of that group. A minus sign sits above lane seven, and the
+wedge begins at lane eight and widens to lane twelve. Lane seven received buffer and no protein.
 
-**Step 3.** Record the structure of panel B. The vertical axis is bound RNA as a percentage, with
-labelled ticks at zero, twenty five, fifty, seventy five and one hundred. The horizontal axis is the
-logarithm of protein concentration in molar, with labelled ticks at ten to the minus eight, ten to
-the minus seven and ten to the minus six. The legend gives RNA 1 as an open white square on a grey
-line, RNA 2 as a filled cyan square on a solid black line, and RNA 3 as a filled grey square on a
-dashed black line.
+**Step 3.** Assign a protein concentration to each lane that received protein. Five concentrations
+were prepared and five lanes per group received protein, so the assignment is one to one. The wedge
+rises from left to right, so the lowest concentration is in the leftmost of those lanes.
 
-**Step 4.** Count the plotted points per series and deduce the correspondence. Each of the three
-series carries five points, while each gel group holds six lanes. One lane per group must therefore
-be unplotted. The only lane in each group that received no protein is the one marked by the minus
-sign, and a binding curve plots bound RNA against protein concentration, so no point can exist for a
-lane in which no protein was present. The unplotted lane is the minus lane, and the first plotted
-point of a series belongs to the second lane of its group, not the first.
+| Lane | Protein concentration |
+|---|---|
+| 7 | none, buffer control |
+| 8 | 3.9 nM |
+| 9 | 15.6 nM |
+| 10 | 62.5 nM |
+| 11 | 250 nM |
+| 12 | 1 micromolar |
 
-**Step 5.** Fix the correspondence for RNA 2. The RNA 2 group runs from lane seven to lane twelve.
-Lane seven received no protein. The five plotted RNA 2 points therefore map in order onto lanes
-eight, nine, ten, eleven and twelve.
+Lane ten therefore received 62.5 nM recombinant ELAV. Note that the control lane carries no
+concentration at all, so it must not be counted as the first step of the dilution series.
 
-**Step 6.** Read the five RNA 2 points off the vertical axis. Taking the fifty per cent gridline and
-the zero baseline as the calibration, the filled cyan squares sit at approximately twelve, eighteen,
-thirty six, eighty six and ninety seven per cent bound, in order of increasing protein concentration.
+**Step 4.** Read the dissociation constant for RNA 2. The legend of panel B lists a value of 86
+nanomolar for RNA 2, with a standard error of 12.6. The value for RNA 1 is 20 nanomolar and for RNA 3
+is 335 nanomolar, so the correct series must be selected by its legend entry, which is the filled
+cyan square on a solid black line.
 
-**Step 7.** Apply the threshold. The first three RNA 2 points lie below fifty per cent. The fourth
-point, at about eighty six per cent, is the first to exceed fifty per cent.
+**Step 5.** Justify the approximation the prompt licenses. The probe is held at 100 pM while the
+protein is in the nanomolar range, so protein exceeds RNA by about three orders of magnitude at the
+concentration in question. Essentially none of the added protein is consumed by complex formation,
+and the free protein concentration is therefore well approximated by the total added concentration.
 
-**Step 8.** Do not take the crossing from the printed dissociation constant or from the red dashed
-guides. The legend prints a dissociation constant of eighty six nanomolar for RNA 2 and a red dashed
-vertical guide marks that concentration, which falls between the third and fourth plotted points. The
-prompt makes panel B's plotted points the measurement of record, and the first plotted point above
-fifty per cent is the fourth, not the third.
+**Step 6.** Write the single site binding isotherm. For a one to one interaction at equilibrium, the
+fraction of RNA carrying bound protein is the free protein concentration divided by the sum of the
+free protein concentration and the dissociation constant.
 
-**Step 9.** Convert the fourth RNA 2 point back to a lane. From step 5 the fourth point corresponds
-to the fourth protein containing lane of the RNA 2 group, which is lane eleven.
+**Step 7.** Substitute. The protein concentration is 62.5 nanomolar and the dissociation constant is
+86 nanomolar, so the fraction bound is 62.5 divided by the sum of 62.5 and 86, which is 62.5 divided
+by 148.5.
 
-**Step 10.** Check the answer against the gel itself. In the RNA 2 group the upper band labelled as
-the protein and RNA complex is faint through lanes eight, nine and ten, where free RNA still
-dominates, and becomes the dominant species at lane eleven, where the free RNA band drops sharply.
-The gel and the plot agree.
+**Step 8.** Evaluate. 62.5 divided by 148.5 is 0.420875. Expressed as a percentage that is 42.0875,
+which rounds to 42.1 at one decimal place.
 
-**Final Answer: 11**
+**Step 9.** Sanity check against the figure. The measured point for RNA 2 at this concentration sits
+at roughly 36 per cent, below the predicted 42.1 per cent. A measured occupancy slightly below the
+equilibrium prediction is the expected direction for a gel shift assay, because some complex
+dissociates during electrophoresis. The prediction and the measurement are therefore consistent, and
+the question asks for the prediction.
+
+**Final Answer: 42.1**
 
 ---
 
 ## GTFA
 
-11
+42.1
 
 ---
 
@@ -194,38 +190,34 @@ horizontal positions.
 
 | Option | Reasoning error it encodes |
 |---|---|
-| 10 | Maps the first plotted point onto lane seven, the lane that received no protein, so every lane assignment is one too low |
-| 12 | Takes the highest concentration lane rather than the lowest lane that clears the threshold |
-| 9 | Takes the crossing from the printed dissociation constant of eighty six nanomolar and the red dashed vertical guide, landing on the third concentration |
-| 4 | Applies the criterion to RNA 1 instead of RNA 2 |
-| 18 | Applies the criterion to RNA 3 instead of RNA 2 |
+| 74.4 | Counts the buffer control as the first step of the dilution series, so lane ten is read as 250 nM |
+| 75.8 | Uses the dissociation constant of RNA 1, which is 20 nM, instead of the one for RNA 2 |
+| 15.7 | Uses the dissociation constant of RNA 3, which is 335 nM, instead of the one for RNA 2 |
+| 57.9 | Inverts the isotherm and computes the dissociation constant over the sum rather than the protein concentration over the sum |
+| 36.0 | Reads the plotted measurement off panel B instead of computing the predicted value |
 
 ---
 
 ## Why this is expected to fail a frontier model
 
-Each lever is one documented in the golden examples.
-
-**The unplotted lane.** Golden example 2 established that the model counts drawn objects rather than
-positions. Its response wrote that it had counted the zero height positions and then counted only the
-visible bars, reporting eighteen where the group held twenty. Here the lane that received no protein
-appears on the gel but contributes no point to the plot. A model that pairs the first plotted point
-with the first lane of the group returns ten.
-
-**The printed value pulling against the marks.** Golden example 3 defeated the model by telling the
-responder that the fitted curve was a visual guide only, which forced the answer out of the printed
-parameter and into the data points. Here the legend prints a dissociation constant of eighty six
-nanomolar and a red dashed guide marks it, both of which sit between the third and fourth points. A
-model that answers from the printed number rather than the plotted symbols returns nine.
+**The unplotted control.** Golden example 2 established that the model counts drawn objects rather
+than positions, writing that it had counted the zero height positions and then counting only the
+visible bars. Here the control lane is visible on the gel but holds no concentration. A model that
+treats it as the first step of the dilution series puts 250 nM into lane ten and returns 74.4.
 
 **Series identity.** Golden example 5, also biochemistry, showed the model merging two preparations
-across panels and dropping a species from its answer. Here three series share one frame and three
-groups share one gel. A model that drifts onto the open white squares or the filled grey squares
-returns four or eighteen.
+across panels and dropping a species from its answer. Three dissociation constants sit side by side
+in one legend here, and taking the wrong one returns 75.8 or 15.7.
 
-**Cross panel corroboration.** Golden example 3 also showed the model failing to check a plot reading
-against the matching gel lane. Here the gel independently confirms lane eleven, so a model that never
-looks at panel A has no way to catch its own error.
+**The printed measurement pulling against the calculation.** Golden example 3 defeated the model by
+forcing the answer out of a printed parameter and into the data. The inverse applies here. Panel B
+displays a measured value of about 36 per cent at this concentration, and a model that reports what
+it sees rather than what the isotherm predicts returns 36.0.
+
+**The isotherm itself.** The question cannot be answered by reading or by mapping alone. It needs the
+single site binding relation and the reasoning that justifies substituting total protein for free
+protein when the probe sits a hundred fold below the dissociation constant. A model that reaches for
+the wrong form of the expression returns 57.9.
 
 ---
 
@@ -236,13 +228,13 @@ is true, why the correct reading differs, and what it cost in the final answer.
 
 Template for the most likely failure:
 
-> The response correctly identifies the three groups of six lanes and correctly reads the RNA 2
-> series as crossing fifty per cent at its fourth plotted point. It then assigns that point to lane
-> ten because it pairs the first plotted point with lane seven, the lane that received no protein and
-> that contributes no point to panel B. Counting from lane eight, the first protein containing lane,
-> the fourth point falls on lane eleven, so the response is one lane low.
+> The response correctly selects the dissociation constant of 86 nanomolar for RNA 2 and correctly
+> applies the single site isotherm. It assigns 250 nanomolar to lane ten, however, because it counts
+> the buffer control in lane seven as the first step of the dilution series. Lane seven holds no
+> protein and so carries no concentration, which places 62.5 nanomolar in lane ten and gives 42.1
+> rather than 74.4.
 
-If a model answers eleven on the first attempt, do not deliver the task. Redesign it, swap the image,
+If a model answers 42.1 on the first attempt, do not deliver the task. Redesign it, swap the image,
 or retire it.
 
 ---
@@ -252,7 +244,7 @@ or retire it.
 | Item | Status |
 |---|---|
 | Format PNG or JPEG | JPEG |
-| Under 5 MB | 195 KB |
+| Under 5 MB | 336 KB |
 | Resolution | Resampled once to 2000 px long edge, nothing else changed |
 | On image labels preserved | Lane numbers, group labels, wedges, band labels, axes, legend, all intact |
 | No annotation added after capture | None added, every mark is the publisher's |
@@ -260,17 +252,19 @@ or retire it.
 | License on the allowed list | CC BY |
 | Peer reviewed and not retracted | Yes and yes |
 | Source recorded | DOI and PMCID above |
-| Prompt answerable only from the image | Yes, the lane mapping appears nowhere in the text |
-| Answer not available in the publication | The article reports dissociation constants, not this lane |
-| Single unambiguous answer | One integer |
+| Prompt answerable only from the image | Yes, the constant and the lane position come only from the figure |
+| Requires domain expertise | Single site isotherm plus the excess ligand approximation |
+| No math notation in the prompt | Plain text throughout, no LaTeX |
+| Answer not available in the publication | The article reports measured constants, never a predicted occupancy |
+| Single unambiguous answer | One decimal, 42.1 |
 | No options listed in the prompt | None |
-| Implied answer space of at least ten | Eighteen lanes |
-| One analysis, not stacked | One mapping and one threshold |
-| Not a pure counting question | The count feeds a lane assignment |
-| Conventions spelled out | Lane layout, the unplotted lane, the measurement of record, the threshold |
+| Implied answer space of at least ten | A continuous percentage, not a short list of candidates |
+| One analysis, not stacked | One concentration assignment feeding one calculation |
+| Not a pure counting question | No counting is requested at all |
+| Conventions spelled out | Dilution series, control lane, wedge direction, binding model, decimal places |
 | Solution numbered, evidence first, arithmetic shown | Yes |
 | Image description derives the answer without the image | Yes, the series table and lane layout are given |
-| Description never states the answer | Lane eleven is never named |
+| Description never states the answer | The predicted value is never given |
 | Five distractors, each mapped to an error | Yes |
 | Both models failed | Still to run |
 | Failure reason written | Template above, fill after the runs |
