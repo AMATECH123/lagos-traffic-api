@@ -133,6 +133,39 @@ Named in the guide and in the image standards. Real captures carry bubbles, scra
 background speckle, torn tissue and uneven loading. Golden example 1 depended on calling two red
 specks background rather than signal.
 
+### W9. The one that is not a model weakness at all
+
+This is a lesson from two failed attempts, not from the golden examples, and it governs everything
+above.
+
+Two tasks were built on a shift assay figure. The first asked for the occupancy predicted by a single
+site isotherm at the concentration in a named lane. The second asked for the ratio of two such
+predictions in two different groups. Both were checked for every rule in the guide and both were
+solved correctly by a model on the first attempt.
+
+The reason is the same in each case. The answer never depended on the picture. The dilution series
+was stated in the prompt, because an exact answer needed it. The binding constants were printed in
+the legend as three short numbers. The lane mapping was an ordinal count. A model that knows the
+binding relation can answer from the prompt text plus three legend values, and current models know
+the binding relation perfectly well.
+
+The rule that follows. A quantity that is printed on the figure or stated in the prompt is a quantity
+the model already has. Adversarial difficulty lives only in quantities that must be measured off the
+pixels and appear nowhere in text. Every golden example obeys this. Zone thickness in the organoid
+panels is nowhere printed. Bar heights against a gridline are nowhere printed. Whether a point sits
+on the axis or just above it is nowhere printed. Which node two taxa first share is nowhere printed.
+
+Before building a task, ask one question: if the image were replaced by its caption and its printed
+values, could the question still be answered? If yes, the task will not fail a model, however much
+domain knowledge the arithmetic appears to need. Arithmetic is not a weakness. Measurement is.
+
+This cuts against a second pressure. Visual magnitudes are what break models, and they are also what
+make an answer arguable. The way through is a visual judgement that is coarse and categorical rather
+than fine and continuous: a band that clearly dominates rather than one that marginally exceeds, a
+point clearly clear of an axis rather than one that brushes it. Pick the comparison where the gap is
+large enough that two experts cannot disagree, then make the count or the call feed a calculation so
+the prompt is not a bare observation.
+
 ---
 
 ## 3. Three prompt architectures for biochemistry
