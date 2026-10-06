@@ -1,0 +1,5 @@
+In the experiment shown, a radiolabelled RNA probe was held at 100 pM, roughly one hundred fold below the dissociation constants measured here, and recombinant ELAV was added from a serial dilution prepared at 1 µM, 250 nM, 62.5 nM, 15.6 nM and 3.9 nM, alongside a buffer only control containing no protein.
+
+Panel A shows the resulting gel. The eighteen numbered lanes form three consecutive groups, one group per RNA, in the order RNA 1, RNA 2, RNA 3 from left to right. Within each group the wedge marks the lanes that received protein, rising from left to right. Panel B reports the quantification for the same three RNAs together with the fitted dissociation constant of each.
+
+Treating each interaction as a single site equilibrium, and taking the free protein concentration to be well approximated by the total protein concentration under these conditions, calculate the predicted bound percentage of RNA 1 in lane 4 divided by the predicted bound percentage of RNA 3 in lane 16. Report the ratio to two significant figures.
